@@ -1,6 +1,7 @@
 services:
   registry:
     image: registry:3.0.0
+    restart: unless-stopped
     environment:
       REGISTRY_AUTH: htpasswd
       REGISTRY_AUTH_HTPASSWD_REALM: Registry Realm
