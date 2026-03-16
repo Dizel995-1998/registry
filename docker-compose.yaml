@@ -13,13 +13,13 @@ services:
       # Mount the data directory
       - ./data:/data
     ports:
-      - 5000:5000
+      - "172.17.0.1:5000:5000"
 
   registry-ui:
     image: joxit/docker-registry-ui:2
     restart: unless-stopped
     ports:
-      - 10000:80
+      - "172.17.0.1:10000:80"
     environment:
       - SINGLE_REGISTRY=true
       - REGISTRY_TITLE=Docker Registry UI
